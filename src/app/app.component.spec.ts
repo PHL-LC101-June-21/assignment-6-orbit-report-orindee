@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { OrbitCountsComponent } from './orbit-counts/orbit-counts.component';
 import { OrbitListComponent } from './orbit-list/orbit-list.component';
@@ -9,7 +9,7 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let element: DebugElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
@@ -31,7 +31,7 @@ describe('AppComponent', () => {
 	expect(component).toBeTruthy();
  });
 
- it('should contain the list component', async(() => {
+ it('should contain the list component', waitForAsync(() => {
 	const fixture = TestBed.createComponent(AppComponent);
 	fixture.detectChanges();
 	const compiled = fixture.debugElement.nativeElement;

@@ -1,5 +1,5 @@
 import { DebugElement } from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { Satellite } from '../satellite';
 
@@ -10,7 +10,7 @@ describe('OrbitCountsComponent', () => {
   let fixture: ComponentFixture<OrbitCountsComponent>;
   let element: DebugElement;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ OrbitCountsComponent ]
     })

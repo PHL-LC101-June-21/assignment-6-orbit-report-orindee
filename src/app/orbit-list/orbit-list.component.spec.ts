@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { OrbitListComponent } from './orbit-list.component';
 import { Satellite } from '../satellite';
 import { By } from "@angular/platform-browser";
@@ -9,7 +9,7 @@ describe('OrbitListComponent', () => {
 	let fixture: ComponentFixture<OrbitListComponent>;
 	let element: DebugElement;
 
-	beforeEach(async(() => {
+	beforeEach(waitForAsync(() => {
 		TestBed.configureTestingModule({
 			declarations: [OrbitListComponent]
 		})
