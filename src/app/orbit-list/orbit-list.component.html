@@ -6,9 +6,10 @@
     <th>Orbit Type</th>
     <th>Launch Date</th>
   </tr>
-  <tr *ngFor="let satellite of satellites; isSpaceDebris as debris; even as isEven" [ngStyle]="{background: isEven ? 'skyblue' : '#eeeeee'}">
+  <tr *ngFor="let satellite of satellites; even as isEven" [ngStyle]="{background: isEven ? 'skyblue' : '#eeeeee'}">
     <td>{{satellite.name}}</td>
-    <td [ngClass]="{'warning': Satellite.isSpaceDebris ; 'td'}">{{satellite.type}}</td>
+    <td><span *ngIf="satellite.isSpaceDebris(); else notDebris" class="warning">{{satellite.type}}</span></td>
+    <ng-template #notDebris><td>{{satellite.type}}</td></ng-template>
     <td>{{satellite.operational}}</td>
     <td>{{satellite.orbitType}}</td>
     <td>{{satellite.launchDate}}</td>
